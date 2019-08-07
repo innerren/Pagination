@@ -13,6 +13,11 @@ const PostList = ({ props, posts }) => {
   ) : (
     <div className="App">
       <Tabs page={page} perPage={perPage} totalPages={totalPages} />
+      <SelectorPerPage
+        page={page}
+        perPage={perPage}
+        totalPosts={posts.length}
+      />
       {currentPosts.map(post => {
         return (
           <div
@@ -21,8 +26,12 @@ const PostList = ({ props, posts }) => {
           />
         );
       })}
+      <SelectorPerPage
+        page={page}
+        perPage={perPage}
+        totalPosts={posts.length}
+      />
       <Tabs page={page} perPage={perPage} totalPages={totalPages} />
-      <SelectorPerPage perPage={perPage} />
     </div>
   );
 };
